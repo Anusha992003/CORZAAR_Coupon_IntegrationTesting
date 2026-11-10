@@ -2,6 +2,7 @@ package com.driverFactory;
 
 import java.util.Map;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -16,8 +17,8 @@ public class DriverFactory {
 	public static ThreadLocal<WebDriver> tldriver = new ThreadLocal<>();
 
 	public WebDriver init_driver(String browser) {
-		System.out.println("browser value is:" + browser);
-		if (browser.equals("chrome")) {
+		System.out.println("Browser value is:" + browser);
+		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 
 			ChromeOptions options = new ChromeOptions();
@@ -33,6 +34,7 @@ public class DriverFactory {
 		} else {
 			System.out.println("please pass the correct browser value:" + browser);
 		}
+		getDriver().manage().window().setSize(new Dimension(1920, 1080));
 
 		return getDriver();
 
