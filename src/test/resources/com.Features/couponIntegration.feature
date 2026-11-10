@@ -1,3 +1,4 @@
+@Coupon
 Feature: Verifying the integration flow of coupon 
 
 Scenario: Coupon flow
@@ -16,7 +17,7 @@ When the admin logged out
 And the learner is logged in
 Then the learner navigates to offers page and verifies the approved coupon visibility 
 
-@reject
+
 Scenario: Verification of rejected coupon
 
 Given the admin rejects the coupon 

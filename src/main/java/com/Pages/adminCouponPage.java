@@ -105,6 +105,7 @@ public class adminCouponPage {
 //				wait.until(ExpectedConditions.elementToBeClickable(rejectBtn.get(0))).click();
 //			}
 //		}
+		elementUtils.waitForVisibility(approveBtn);
 		if (approveBtn.isDisplayed()) {
 			elementUtils.click(approveBtn);
 		}
@@ -123,7 +124,7 @@ public class adminCouponPage {
 	}
 	
 	public void reject() {
-		
+		elementUtils.waitForVisibility(rejectBtn);
 		if(rejectBtn.isDisplayed()) {
 			elementUtils.click(rejectBtn);
 		}
